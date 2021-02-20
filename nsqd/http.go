@@ -128,6 +128,7 @@ func (s *httpServer) doInfo(w http.ResponseWriter, req *http.Request, ps httprou
 	return struct {
 		Version          string `json:"version"`
 		BroadcastAddress string `json:"broadcast_address"`
+		UserData         string `json:"userdata"`
 		Hostname         string `json:"hostname"`
 		HTTPPort         int    `json:"http_port"`
 		TCPPort          int    `json:"tcp_port"`
@@ -135,6 +136,7 @@ func (s *httpServer) doInfo(w http.ResponseWriter, req *http.Request, ps httprou
 	}{
 		Version:          version.Binary,
 		BroadcastAddress: s.ctx.nsqd.getOpts().BroadcastAddress,
+		UserData:         s.ctx.nsqd.getOpts().UserData,
 		Hostname:         hostname,
 		TCPPort:          s.ctx.nsqd.RealTCPAddr().Port,
 		HTTPPort:         s.ctx.nsqd.RealHTTPAddr().Port,

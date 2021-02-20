@@ -25,6 +25,7 @@ type PeerInfo struct {
 	RemoteAddress    string `json:"remote_address"`
 	Hostname         string `json:"hostname"`
 	BroadcastAddress string `json:"broadcast_address"`
+	UserData         string `json:"userdata"`
 	TCPPort          int    `json:"tcp_port"`
 	HTTPPort         int    `json:"http_port"`
 	Version          string `json:"version"`

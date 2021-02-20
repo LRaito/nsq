@@ -20,6 +20,7 @@ func connectCallback(n *NSQD, hostname string) func(*lookupPeer) {
 		ci["http_port"] = n.RealHTTPAddr().Port
 		ci["hostname"] = hostname
 		ci["broadcast_address"] = n.getOpts().BroadcastAddress
+		ci["userdata"] = n.getOpts().UserData
 
 		cmd, err := nsq.Identify(ci)
 		if err != nil {

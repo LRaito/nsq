@@ -349,6 +349,7 @@ func (c *ClusterInfo) GetNSQDProducers(nsqdHTTPAddrs []string) (Producers, error
 	type infoRespType struct {
 		Version          string `json:"version"`
 		BroadcastAddress string `json:"broadcast_address"`
+		UserData         string `json:"userdata"`
 		Hostname         string `json:"hostname"`
 		HTTPPort         int    `json:"http_port"`
 		TCPPort          int    `json:"tcp_port"`
@@ -405,6 +406,7 @@ func (c *ClusterInfo) GetNSQDProducers(nsqdHTTPAddrs []string) (Producers, error
 				Version:          infoResp.Version,
 				VersionObj:       version,
 				BroadcastAddress: infoResp.BroadcastAddress,
+				UserData:         infoResp.UserData,
 				Hostname:         infoResp.Hostname,
 				HTTPPort:         infoResp.HTTPPort,
 				TCPPort:          infoResp.TCPPort,
@@ -434,6 +436,7 @@ func (c *ClusterInfo) GetNSQDTopicProducers(topic string, nsqdHTTPAddrs []string
 	type infoRespType struct {
 		Version          string `json:"version"`
 		BroadcastAddress string `json:"broadcast_address"`
+		UserData         string `json:"userdata"`
 		Hostname         string `json:"hostname"`
 		HTTPPort         int    `json:"http_port"`
 		TCPPort          int    `json:"tcp_port"`
@@ -504,6 +507,7 @@ func (c *ClusterInfo) GetNSQDTopicProducers(topic string, nsqdHTTPAddrs []string
 						Version:          infoResp.Version,
 						VersionObj:       version,
 						BroadcastAddress: infoResp.BroadcastAddress,
+						UserData:         infoResp.UserData,
 						Hostname:         infoResp.Hostname,
 						HTTPPort:         infoResp.HTTPPort,
 						TCPPort:          infoResp.TCPPort,

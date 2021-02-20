@@ -27,6 +27,7 @@ type Producer struct {
 	RemoteAddress    string         `json:"remote_address"`
 	Hostname         string         `json:"hostname"`
 	BroadcastAddress string         `json:"broadcast_address"`
+	UserData         string         `json:"userdata"`
 	TCPPort          int            `json:"tcp_port"`
 	HTTPPort         int            `json:"http_port"`
 	Version          string         `json:"version"`
@@ -41,6 +42,7 @@ func (p *Producer) UnmarshalJSON(b []byte) error {
 		RemoteAddress    string   `json:"remote_address"`
 		Hostname         string   `json:"hostname"`
 		BroadcastAddress string   `json:"broadcast_address"`
+		UserData         string   `json:"userdata"`
 		TCPPort          int      `json:"tcp_port"`
 		HTTPPort         int      `json:"http_port"`
 		Version          string   `json:"version"`
@@ -54,6 +56,7 @@ func (p *Producer) UnmarshalJSON(b []byte) error {
 		RemoteAddress:    r.RemoteAddress,
 		Hostname:         r.Hostname,
 		BroadcastAddress: r.BroadcastAddress,
+		UserData:         r.UserData,
 		TCPPort:          r.TCPPort,
 		HTTPPort:         r.HTTPPort,
 		Version:          r.Version,

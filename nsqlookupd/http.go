@@ -253,6 +253,7 @@ type node struct {
 	RemoteAddress    string   `json:"remote_address"`
 	Hostname         string   `json:"hostname"`
 	BroadcastAddress string   `json:"broadcast_address"`
+	UserData         string   `json:"userdata"`
 	TCPPort          int      `json:"tcp_port"`
 	HTTPPort         int      `json:"http_port"`
 	Version          string   `json:"version"`
@@ -290,6 +291,7 @@ func (s *httpServer) doNodes(w http.ResponseWriter, req *http.Request, ps httpro
 			RemoteAddress:    p.peerInfo.RemoteAddress,
 			Hostname:         p.peerInfo.Hostname,
 			BroadcastAddress: p.peerInfo.BroadcastAddress,
+			UserData:         p.peerInfo.UserData,
 			TCPPort:          p.peerInfo.TCPPort,
 			HTTPPort:         p.peerInfo.HTTPPort,
 			Version:          p.peerInfo.Version,
@@ -315,6 +317,7 @@ func (s *httpServer) doDebug(w http.ResponseWriter, req *http.Request, ps httpro
 				"id":                p.peerInfo.id,
 				"hostname":          p.peerInfo.Hostname,
 				"broadcast_address": p.peerInfo.BroadcastAddress,
+				"userdata":          p.peerInfo.UserData,
 				"tcp_port":          p.peerInfo.TCPPort,
 				"http_port":         p.peerInfo.HTTPPort,
 				"version":           p.peerInfo.Version,

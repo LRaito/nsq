@@ -16,6 +16,7 @@ type Options struct {
 	TCPAddress       string `flag:"tcp-address"`
 	HTTPAddress      string `flag:"http-address"`
 	BroadcastAddress string `flag:"broadcast-address"`
+	UserData         string `flag:"user-data"`
 
 	InactiveProducerTimeout time.Duration `flag:"inactive-producer-timeout"`
 	TombstoneLifetime       time.Duration `flag:"tombstone-lifetime"`

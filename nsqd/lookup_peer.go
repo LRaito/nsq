@@ -32,6 +32,7 @@ type peerInfo struct {
 	HTTPPort         int    `json:"http_port"`
 	Version          string `json:"version"`
 	BroadcastAddress string `json:"broadcast_address"`
+	UserData         string `json:"userdata"`
 }
 
 // newLookupPeer creates a new lookupPeer instance connecting to the supplied address.
